@@ -1,0 +1,62 @@
+body{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0 auto;
+    text-align: center;
+    margin: 5%;
+    border: 2px lightgray solid;
+}
+
+#main-page{
+    margin: 3% 15% 2% 15%;
+    text-align: left;
+    
+}
+
+.main-content{
+    margin: 5%;
+    line-height: 1.5;
+}
+
+#list-title{
+    font-style: italic;
+}
+
+.list-container{
+    margin: 2%;
+}
+
+.list-elements{
+    margin: 2%;
+}
+
+#title{
+    font-size: 250%;
+    margin-top: 10%;
+    
+}
+
+#title-statement{
+    color: #3370A6;
+    font-size: 110%;
+    margin: 0 auto;
+}
+
+.title-head{
+    text-align: center;
+    border-bottom: 2px solid lightgrey;
+    letter-spacing: .2rem;
+}
+
+.main-text{
+    margin-top: 3%;
+}
+
+#logo-footer{
+    width: 15%;
+    text-align: center;
+}
+
+#footer{
+    margin: 5%;
+}
