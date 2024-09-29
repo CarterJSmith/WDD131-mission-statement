@@ -60,3 +60,12 @@ body{
 #footer{
     margin: 5%;
 }
+
+.dark{
+    background-color: black;
+    color: white;
+}
+
+.dark h2{
+    color: #006EB6;
+}
