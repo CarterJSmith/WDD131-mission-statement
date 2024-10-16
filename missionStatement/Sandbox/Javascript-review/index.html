@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+        <li>Menu</li>
+    </ul>
+
+
+    <script>
+        // variables 
+        const a = 1 // set once, cannot change 
+        let b = 2 // can change 
+        var c = 3 // global 
+
+        const obj = {
+            a:1,
+            b:2,
+            c:3,
+            d:4,
+
+            getName: () => {
+                return "Carter Smith"
+            }
+        }
+        console.log(obj.a)
+        
+        function sum(a,b){
+            return a + b
+        }
+        // lamda
+        const sum2 = (a,b) => a + b
+
+        const sum3 = function(a,b) {
+            return a + b
+        }
+
+        console.log(sum(obj.a, obj.b))
+
+
+        function getName(){
+            return "Other Name"
+        }
+
+        const d = document;
+        // d.getElementById();
+        // d.getElementsByClassName();
+
+        console.log(d.querySelector("ul"));
+
+        while(!true){
+            // do things
+        }
+
+        for (let i = 0; i <10; i++){
+            console.log(i)
+        }
+
+        const listItems = d.querySelectorAll('li');
+        listItems.forEach((ele) => {
+            ele.classList.add("hello")
+        })
+        
+
+    </script>
+
+</body>
+</html>

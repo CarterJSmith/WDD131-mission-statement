@@ -19,25 +19,27 @@ function handleResize() {
 handleResize();
 window.addEventListener("resize", handleResize);
 
+function viewerTemplate(pic, alt) {
+    return `<div class="viewer">
+      <button class="close-viewer">X</button>
+      <img id="img-viewer" src="${pic}" alt="${alt}">
+      </div>`;
+  }
+
 function viewHandler(event) {
-    // Get the element that was clicked
+    // create a variable to hold the element that was clicked on from event.target
     const clickedElement = event.target;
+    // get the src attribute from that element and 'split' it on the "-"
+    const src = clickedElement.getAttribute('src'); 
+    const srcParts = src.split('-');
+    // construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
+    const newImageSrc = `${srcParts[0]}-full.jpeg`;
 
-    // Check if the clicked element is an image
-    if (clickedElement.tagName === 'IMG') {
-        // Get the src attribute of the clicked image and split it on the "-"
-        const imageSrc = clickedElement.src.split("-")[0];
-
-        // Construct the new image file name
-        const newImageSrc = `${imageSrc}-full.jpeg`; // Append '-full.jpeg'
-
-        // Insert the viewerTemplate into the body
-        document.body.insertAdjacentHTML("afterbegin", viewerTemplate(newImageSrc, clickedElement.alt));
-
-        // Add a listener to the close button (X)
-        const closeButton = document.querySelector(".close-viewer");
-        closeButton.addEventListener("click", closeViewer);
-    }
+    // insert the viewerTemplate into the top of the body element
+    const viewerHTML = viewerTemplate(newImageSrc, clickedElement.getAttribute('alt'));
+    document.body.insertAdjacentHTML("afterbegin", viewerHTML);
+    // add a listener to the close button (X) that calls a function called closeViewer when clicked
+    document.querySelector('.close-viewer').addEventListener('click', closeViewer);
 }
 
 function closeViewer() {

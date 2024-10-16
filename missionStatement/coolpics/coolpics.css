@@ -27,10 +27,10 @@ header{
 
 .viewer{
     position: fixed;
-    display: flex;
+    /* display: flex; */
     top: 10%;
     left: 10%;
-    bottom: 10%;
+    bottom: 5%;
     right: 10%;
     background: rgba(0, 0, 0, 0.75);
     display: grid;
@@ -38,8 +38,15 @@ header{
     justify-items: center; 
     align-items: center;
     z-index: 10;
-    height: 90%;
+    /* height: 90%; */
     padding-bottom: 20%;
+    /* height: 100vh; */
+}
+
+#img-viewer{
+    max-height: 80vh;
+    width: 75vw;
+    
 }
 
 .viewer img {
@@ -133,7 +140,7 @@ footer{
         position: fixed;
         top: 0;
         left: 0;
-        bottom: 0;
+        bottom: 5%;
         right: 0;
         background: rgba(0, 0, 0, 0.75);
         display: grid;
@@ -169,6 +176,20 @@ footer{
         background:rgba(0, 0, 0, 0.75);
 
 
+    }
+
+    .viewer{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 5%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.75);
+        display: grid;
+        grid-template-rows: 1fr;
+        justify-items: center; 
+        align-items: center;
+        z-index: 10;
     }
 
   }
