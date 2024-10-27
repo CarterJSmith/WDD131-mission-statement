@@ -33,10 +33,29 @@ ul{
 
 .main-page{
     display: grid;
-    grid-template-columns: 25% 50% 25%;
-    margin-bottom: 20px;
+    grid-template-columns: 25% 50%;
+    gap: 20px; /* Adds spacing between articles */
+    margin-bottom: 20px; /* Adjust for spacing between articles */
 }
 
+.article {
+    display: grid; /* or flex depending on your design */
+    grid-template-columns: 25% 50%; /* Adjust the widths */
+    margin-bottom: 20px; /* Space between articles */
+    gap: 20px; /* Space between left and main content */
+}
+
+.left-panel {
+    padding: 10px; /* Adjust padding */
+}
+
+.main-content {
+    padding: 10px; /* Adjust padding */
+}
+
+.article-container {
+    display: contents; /* Keeps grid layout intact */
+}
 
 .skiptocontent a {
     position: absolute;
