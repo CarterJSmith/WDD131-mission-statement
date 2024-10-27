@@ -34,7 +34,9 @@ ul{
 .main-page{
     display: grid;
     grid-template-columns: 25% 50% 25%;
+    margin-bottom: 20px;
 }
+
 
 .skiptocontent a {
     position: absolute;
@@ -59,6 +61,17 @@ ul{
 .main-content{
     grid-column: 2/3;
     margin-left: 7%;
+}
+
+.book-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-img img {
+    max-width: 100%; 
+    height: auto; 
 }
 
 .filters{

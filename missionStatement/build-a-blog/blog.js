@@ -26,3 +26,46 @@ const articles = [
 	}
 ]
 
+
+// Get reference to the main content area
+const mainContent = document.querySelector('.main-page');
+
+if (!mainContent) {
+    console.error("The main content element was not found!");
+} else {
+    console.log("Main content element found:", mainContent);
+}
+
+// Function to generate articles
+function displayArticles() {
+    articles.forEach(article => {
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article'); // You can add styles later
+
+        // Create a template literal for the article's HTML
+        articleElement.innerHTML = `
+            <div class="left-panel">
+                <p class="date">${article.date}</p>
+                <p class="ages">${article.ages}</p>
+                <p class="genre">${article.genre}</p>
+                <p class="stars">${article.stars}</p>
+            </div>
+            <div class="main-content">
+                <h2 class="book-title">${article.title}</h2>
+                <div class="book-img">
+                    <img src="${article.imgSrc}" alt="${article.imgAlt}">
+                </div>
+                <p class="Description">${article.description}</p>
+            </div>
+        `;
+
+        // Append the new article to the main content
+        mainContent.appendChild(articleElement);
+    });
+}
+
+// Call the function to display articles
+if (mainContent) {
+    displayArticles();
+}
+
