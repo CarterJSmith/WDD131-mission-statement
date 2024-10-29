@@ -51,9 +51,19 @@ if (!mainContent) {
 
 // Function to generate articles
 function displayArticles() {
+    // filterElements = document.querySelectorAll('.div');
+    // filterElements.classList.add('filters');
+
+    // filterElements.innerHTML = `
+    //         <div class="filters">
+    //             <p>filters will go here</p>
+    //         </div>
+    //         `;
+    // mainContent.appendChild(filterElements);
+
     articles.forEach(article => {
         const articleElement = document.createElement('div');
-        articleElement.classList.add('article'); // You can add styles later
+        articleElement.classList.add('article'); // Class for styling
 
         // Create a template literal for the article's HTML
         articleElement.innerHTML = `
@@ -63,12 +73,6 @@ function displayArticles() {
                 <p class="genre">${article.genre}</p>
                 <p class="stars">${article.stars}</p>
             </div>
-        `;
-
-        // Append the new article to the main content
-        mainContent.appendChild(articleElement);
-
-		articleElement.innerHTML = `
             <div class="main-content">
                 <h2 class="book-title">${article.title}</h2>
                 <div class="book-img">
@@ -83,8 +87,8 @@ function displayArticles() {
     });
 
     // Append filters at the end, on the next row
-    const filters = document.querySelector('.filters');
-    mainContent.appendChild(filters);
+    // const filters = document.querySelector('.filters');
+    // mainContent.appendChild(filters);
 }
 
 // Call the function to display articles
