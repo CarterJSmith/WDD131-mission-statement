@@ -1,29 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: monospace;
+    }
+
+    .card-form {
+      background: linear-gradient(145deg, #e6e6e6, #ffffff);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      position: relative;
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 3fr 1fr;
+    }
+
+    .total {
+      grid-column: 1 / -1;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 25px;
+      background-color: #ff6b6b;
+      border-radius: 4px;
+    }
+
+    .field {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .expiry-cvc {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      grid-column: 1 / -1;
+      text-align: right;
+    }
+
+    button {
+      padding: 0.5rem 1.5rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    .masked-card {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px;
+      height: 100%;
+      background-color: #333;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  </style>
 </head>
 <body>
-    <form id="form">
-        <input name="phone" type="text">
+  <div class="card-form">
+    <div class="card-grid">
+      <div class="total">
+        <span>TOTAL: $199</span>
+        <div class="card-icon"></div>
+      </div>
+      <div class="field">
+        <label>Card Number</label>
+        <input type="text" placeholder="1234 5678 9101 1020">
+      </div>
+
+      <div class="field">
+        <label>Card Holder</label>
+        <input type="text" placeholder="John Doe">
+      </div>
+
+      <div class="expiry-cvc">
+        <div class="field">
+          <label>Expiration</label>
+          <input type="text" placeholder="MM / YY">
+        </div>
+        
+        <div class="field">
+          <label>CVC/CVV</label>
+          <input type="text" placeholder="xxx">
+        </div>
+      </div>
+
+      <div class="submit-btn">
         <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        const form = document.getElementById("form");
-
-        form.addEventListener("submit", (e) => {
-            event.preventDefault();
-
-            const formElement = event.target;
-
-            const inputElement = formElement.elements["phone"];
-            inputElement.value = "";
-
-            console.log(e);
-        })
-    </script>
+      </div>
+    </div>
+    <div class="masked-card"></div>
+  </div>
 </body>
 </html>
