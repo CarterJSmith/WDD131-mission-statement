@@ -1,0 +1,178 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body{
+    font-size: 1.5em;
+    font-family: 'Gentium Book Plus', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns items centrally */
+    padding: 10px;
+}
+
+#title-header
+{
+    align-self: flex-end;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+
+.find-a-recipe {
+    display: flex;
+    align-items: vertical-center;
+    margin: 20px 0;
+}
+
+.find-a-recipe input {
+    flex: 10; /* Makes the input take up available space */
+    padding: 5px;
+    border: 1px solid #555;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+    font-size: 1em;
+}
+
+#search-icon-container{
+    border: #555 solid 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+#search-icon{
+    margin: 10px;
+    margin-left: 12px;
+    width: 1em;
+}
+
+/* #find-a-recipe-input{
+    display: flex;
+} */
+
+#recipe-image
+{
+    width: 100%;
+    padding-right: 20px;
+    
+}
+
+#title{
+    color: lightskyblue;
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.find-a-recipe img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    flex-direction: row;
+}
+
+#recipe{
+    display: flex;
+    flex-direction: row;
+    border: #555 solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.rating{
+    margin-bottom: 15px;
+}
+
+#button{
+    font-size: 1em;
+    padding: 10px;
+}
+
+#description{
+    padding-top: 25px;
+}
+
+footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 20px;
+}
+
+.social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px; 
+}
+#social-media-icons {
+    /* display: flex; */
+    justify-self: end;
+    grid-column: 2/3;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+}
+
+footer a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+#attribution {
+    flex: 1; 
+    color: lightskyblue;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+@media screen and (max-width: 750px) {
+    #recipe{
+        flex-direction: column;
+    }
+    #description
+    {
+        display: none;
+    }
+    /* footer{
+        display: flex;
+    } */
+    .social{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .social img {
+        width: 50px;
+        height: 50px;
+    }
+    #attribution{
+        font-size: 1em;
+    }
+}
