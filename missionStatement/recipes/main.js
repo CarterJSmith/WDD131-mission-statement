@@ -16,7 +16,7 @@ function tagsTemplate(tags) {
     return tags.map(tag => `<li>${tag}</li>`).join('');
 }
 
-// Template function for generating ratings HTML
+//function for generating ratings HTML
 function ratingTemplate(rating) {
     let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
     for (let i = 1; i <= 5; i++) {
@@ -29,35 +29,31 @@ function ratingTemplate(rating) {
 
 // Template function for generating recipe HTML
 function recipeTemplate(recipe) {
-    return `<figure class="recipe">
-        <img src="${recipe.image}" alt="image of ${recipe.name}" />
-        <figcaption>
-            <ul class="recipe__tags">
-                ${tagsTemplate(recipe.tags)}
-            </ul>
-            <h2><a href="#">${recipe.name}</a></h2>
-            <p class="recipe__ratings">
-                ${ratingTemplate(recipe.rating)}
-            </p>
-            <p class="recipe__description">
-                ${recipe.description}
-            </p>
-            <ul class="recipe__ingredients">
-                ${recipe.recipeIngredient.map(ingredient => `<li>${ingredient}</li>`).join('')}
-            </ul>
-            <ol class="recipe__instructions">
-                ${recipe.recipeInstructions.map(instruction => `<li>${instruction}</li>`).join('')}
-            </ol>
-            <p class="recipe__yield">Yield: ${recipe.recipeYield}</p>
-            <p class="recipe__author">By: ${recipe.author}</p>
-        </figcaption>
-    </figure>`;
+    return `
+        
+            <div>
+                <img id="recipe-image" src="${recipe.image}" alt="picture of ${recipe.name}">
+            </div>
+            <div>
+                <button id="button">${recipe.tags[0]}</button>
+                <p id="title">${recipe.name}</p>
+                <span
+                    class="rating"
+                    role="img"
+                    aria-label="Rating: ${recipe.rating} out of 5 stars"
+                >
+                    ${ratingTemplate(recipe.rating)}
+                </span>
+                <p id="description">${recipe.description}</p>
+            </div>
+        `;
 }
+
 
 // Function to render recipes on the page
 function renderRecipes(recipeList) {
-    const outputElement = document.querySelector('#recipe');
-    outputElement.innerHTML = recipeList.map(recipeTemplate).join('');
+    const outputElement = document.querySelector('#recipe'); 
+    outputElement.innerHTML = recipeList.map(recipeTemplate).join(''); // Keeps the structure aligned with existing CSS
 }
 
 // Initialization function to display a random recipe on page load
@@ -75,7 +71,7 @@ function filterRecipes(query) {
     ).sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// Search handler function
+
 function searchHandler(event) {
     event.preventDefault();
     const query = document.querySelector('#find-a-recipe-input').value.toLowerCase();
@@ -83,11 +79,19 @@ function searchHandler(event) {
     renderRecipes(filteredRecipes);
 }
 
-// Event listener for search button
+
+document.querySelector('#find-a-recipe-input').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        searchHandler(event); 
+    }
+});
+
+
 document.querySelector('#search-icon-container').addEventListener('click', searchHandler);
 
-// Initialize the page with a random recipe
+
 init();
 
 
-
+// const recipe = getRandomListEntry(recipes);
+// console.log(recipeTemplate(recipe));
