@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div class="disc-card">
                                 <h2 class="shop-title">${disc.name}</h2>
                                 <a class="shop-img-link" href="#">
-                                    <img class="shop-img" src="${disc.image}" alt="${disc.name}">
+                                    <img class="shop-img" rel="preload"
+                                    
+                                     src="${disc.image}" loading="lazy" alt="${disc.name}">
                                 </a>
                             </div>
                         `)
