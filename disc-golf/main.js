@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             shopContainer.appendChild(section);
         });
 
-        // Add click listeners for popups
+        //Add click listeners for popups
         const discCards = document.querySelectorAll(".disc-card");
         discCards.forEach(card => {
             const discName = card.querySelector(".shop-title").textContent;
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Group discs by type
+    // Group discs by type, help from AI for this function
     function groupBy(array, key) {
         return array.reduce((result, item) => {
             (result[item[key]] = result[item[key]] || []).push(item);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, {});
     }
 
-    // Show popup
+    //Show popup
     function showPopup(disc) {
         const popup = document.createElement("div");
         popup.classList.add("popup");
@@ -67,13 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.appendChild(popup);
 
-        // Add event listener to close button
+        //close button
         document.querySelector(".close-popup").addEventListener("click", () => {
             document.body.removeChild(popup);
         });
     }
 
-    // Initial render
+    
     displayDiscs(discs);
 
     // Filter discs on dropdown change
